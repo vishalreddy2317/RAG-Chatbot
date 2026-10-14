@@ -1,0 +1,3 @@
+-r requirements.txt
+pytest>=8.0,<9
+playwright>=1.45,<2   # only for scripts/take_screenshots.py

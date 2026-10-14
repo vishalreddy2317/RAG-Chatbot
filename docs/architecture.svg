@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker></defs>
+<rect width="1000" height="600" fill="#FFFFFF"/>
+<text x="500.0" y="34" text-anchor="middle" font-size="18" font-weight="700" fill="#0F172A">AI-Powered Document Assistant: RAG architecture</text>
+<text x="24" y="72" font-size="12" font-weight="600" fill="#64748B" letter-spacing="1">INGESTION (once per upload)</text>
+<rect x="24" y="86" width="150" height="70" rx="10" fill="#F5F3FF" stroke="#7C3AED" stroke-width="1.5"/>
+<text x="99.0" y="108" text-anchor="middle" font-size="13" font-weight="600" fill="#0F172A">PDF upload</text>
+<text x="99.0" y="126" text-anchor="middle" font-size="11" fill="#475569">Streamlit sidebar</text>
+<text x="99.0" y="142" text-anchor="middle" font-size="11" fill="#475569">progress bar</text>
+<rect x="206" y="86" width="190" height="70" rx="10" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.5"/>
+<text x="301.0" y="108" text-anchor="middle" font-size="13" font-weight="600" fill="#0F172A">PyMuPDF extraction</text>
+<text x="301.0" y="126" text-anchor="middle" font-size="11" fill="#475569">per-page text, header removal</text>
+<text x="301.0" y="142" text-anchor="middle" font-size="11" fill="#475569">scanned / empty / encrypted checks</text>
+<rect x="428" y="86" width="180" height="70" rx="10" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.5"/>
+<text x="518.0" y="108" text-anchor="middle" font-size="13" font-weight="600" fill="#0F172A">Sentence-aware chunking</text>
+<text x="518.0" y="126" text-anchor="middle" font-size="11" fill="#475569">800 chars, 150 overlap</text>
+<text x="518.0" y="142" text-anchor="middle" font-size="11" fill="#475569">tagged with doc + page</text>
+<rect x="640" y="86" width="180" height="70" rx="10" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.5"/>
+<text x="730.0" y="108" text-anchor="middle" font-size="13" font-weight="600" fill="#0F172A">Sentence Transformers</text>
+<text x="730.0" y="126" text-anchor="middle" font-size="11" fill="#475569">all-MiniLM-L6-v2 (local, CPU)</text>
+<text x="730.0" y="142" text-anchor="middle" font-size="11" fill="#475569">384-d, L2-normalised</text>
+<rect x="852" y="86" width="124" height="70" rx="10" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
+<text x="914.0" y="108" text-anchor="middle" font-size="13" font-weight="600" fill="#0F172A">FAISS index</text>
+<text x="914.0" y="126" text-anchor="middle" font-size="11" fill="#475569">IndexFlatIP = cosine</text>
+<text x="914.0" y="142" text-anchor="middle" font-size="11" fill="#475569">+ chunk metadata</text>
+<path d="M174,121 L206,121" fill="none" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M396,121 L428,121" fill="none" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M608,121 L640,121" fill="none" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M820,121 L852,121" fill="none" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="24" y="226" font-size="12" font-weight="600" fill="#64748B" letter-spacing="1">QUESTION ANSWERING (per message)</text>
+<rect x="24" y="240" width="150" height="70" rx="10" fill="#F5F3FF" stroke="#7C3AED" stroke-width="1.5"/>
+<text x="99.0" y="262" text-anchor="middle" font-size="13" font-weight="600" fill="#0F172A">Question + history</text>
+<text x="99.0" y="280" text-anchor="middle" font-size="11" fill="#475569">st.chat_input</text>
+<rect x="206" y="240" width="160" height="70" rx="10" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.5"/>
+<text x="286.0" y="262" text-anchor="middle" font-size="13" font-weight="600" fill="#0F172A">Follow-up rewrite</text>
+<text x="286.0" y="280" text-anchor="middle" font-size="11" fill="#475569">"it / that" + previous question</text>
+<rect x="398" y="240" width="150" height="70" rx="10" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.5"/>
+<text x="473.0" y="262" text-anchor="middle" font-size="13" font-weight="600" fill="#0F172A">Query embedding</text>
+<text x="473.0" y="280" text-anchor="middle" font-size="11" fill="#475569">same model as chunks</text>
+<rect x="580" y="240" width="150" height="70" rx="10" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.5"/>
+<text x="655.0" y="262" text-anchor="middle" font-size="13" font-weight="600" fill="#0F172A">Top-k search</text>
+<text x="655.0" y="280" text-anchor="middle" font-size="11" fill="#475569">k = 5, scores in [-1, 1]</text>
+<rect x="762" y="240" width="214" height="70" rx="10" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.5"/>
+<text x="869.0" y="262" text-anchor="middle" font-size="13" font-weight="600" fill="#0F172A">Evidence gate</text>
+<text x="869.0" y="280" text-anchor="middle" font-size="11" fill="#475569">score &gt;= 0.30 and (keyword overlap</text>
+<text x="869.0" y="296" text-anchor="middle" font-size="11" fill="#475569">or score &gt;= 0.50) else "no evidence"</text>
+<path d="M174,275 L206,275" fill="none" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M366,275 L398,275" fill="none" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M548,275 L580,275" fill="none" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M730,275 L762,275" fill="none" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M914,156 L914,200 L655,200 L655,240" fill="none" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="784" y="194" text-anchor="middle" font-size="11" fill="#475569">vectors + metadata</text>
+<text x="24" y="372" font-size="12" font-weight="600" fill="#64748B" letter-spacing="1">GENERATION AND VERIFICATION</text>
+<rect x="24" y="386" width="280" height="96" rx="10" fill="#ECFDF5" stroke="#059669" stroke-width="1.5"/>
+<text x="164.0" y="408" text-anchor="middle" font-size="13" font-weight="600" fill="#0F172A">Answer generator (pluggable)</text>
+<text x="164.0" y="426" text-anchor="middle" font-size="11" fill="#475569">1. Extractive sentence ranking: no LLM, no key (default)</text>
+<text x="164.0" y="442" text-anchor="middle" font-size="11" fill="#475569">2. Local LLM via Ollama (llama3.2:3b)</text>
+<text x="164.0" y="458" text-anchor="middle" font-size="11" fill="#475569">3. Hosted API (OpenAI-compatible / Anthropic), optional</text>
+<rect x="336" y="386" width="220" height="96" rx="10" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.5"/>
+<text x="446.0" y="408" text-anchor="middle" font-size="13" font-weight="600" fill="#0F172A">Grounded prompt</text>
+<text x="446.0" y="426" text-anchor="middle" font-size="11" fill="#475569">numbered passages with</text>
+<text x="446.0" y="442" text-anchor="middle" font-size="11" fill="#475569">(document, page) labels;</text>
+<text x="446.0" y="458" text-anchor="middle" font-size="11" fill="#475569">"answer only from context"</text>
+<rect x="588" y="386" width="200" height="96" rx="10" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.5"/>
+<text x="688.0" y="408" text-anchor="middle" font-size="13" font-weight="600" fill="#0F172A">Grounding check</text>
+<text x="688.0" y="426" text-anchor="middle" font-size="11" fill="#475569">each answer sentence must be</text>
+<text x="688.0" y="442" text-anchor="middle" font-size="11" fill="#475569">covered by retrieved text;</text>
+<text x="688.0" y="458" text-anchor="middle" font-size="11" fill="#475569">unsupported sentences flagged</text>
+<rect x="820" y="386" width="156" height="96" rx="10" fill="#F5F3FF" stroke="#7C3AED" stroke-width="1.5"/>
+<text x="898.0" y="408" text-anchor="middle" font-size="13" font-weight="600" fill="#0F172A">Streamlit chat UI</text>
+<text x="898.0" y="426" text-anchor="middle" font-size="11" fill="#475569">answer + badges</text>
+<text x="898.0" y="442" text-anchor="middle" font-size="11" fill="#475569">Sources panel: doc, page,</text>
+<text x="898.0" y="458" text-anchor="middle" font-size="11" fill="#475569">highlighted excerpt, score</text>
+<path d="M869,310 L869,350 L164,350 L164,386" fill="none" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="520" y="344" text-anchor="middle" font-size="11" fill="#475569">top-k passages (if evidence)</text>
+<path d="M304,434 L336,434" fill="none" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M556,434 L588,434" fill="none" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M788,434 L820,434" fill="none" stroke="#475569" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="500.0" y="540" text-anchor="middle" font-size="11" fill="#475569">Everything runs locally and free by default: PyMuPDF, sentence-transformers, FAISS, Streamlit. LLM back-ends are optional and swappable.</text>
+<text x="500.0" y="560" text-anchor="middle" font-size="11" fill="#475569">Fallback: if an LLM call fails, the pipeline degrades to the extractive answer so the user always gets a cited response.</text>
+</svg>

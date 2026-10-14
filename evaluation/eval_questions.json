@@ -1,0 +1,51 @@
+{
+  "documents": ["sample_data/orion_solar_handbook.pdf", "sample_data/lumen_library_policy.pdf"],
+  "answerable": [
+    {"id": "q01", "question": "What is the community solar credit rate for 2024?", "doc": "orion_solar_handbook.pdf", "pages": [3], "keywords": ["11.7"]},
+    {"id": "q02", "question": "Is there an enrollment fee?", "doc": "orion_solar_handbook.pdf", "pages": [2], "keywords": ["no enrollment fee"]},
+    {"id": "q03", "question": "How much notice is required to cancel a subscription?", "doc": "orion_solar_handbook.pdf", "pages": [2], "keywords": ["30 days"]},
+    {"id": "q04", "question": "What is the maximum residential share size?", "doc": "orion_solar_handbook.pdf", "pages": [4], "keywords": ["25 kilowatts"]},
+    {"id": "q05", "question": "When is planned maintenance on the array scheduled?", "doc": "orion_solar_handbook.pdf", "pages": [5], "keywords": ["April and October"]},
+    {"id": "q06", "question": "What happens if the array produces less than 90 percent of its expected output?", "doc": "orion_solar_handbook.pdf", "pages": [5], "keywords": ["reduced proportionally", "reduced"]},
+    {"id": "q07", "question": "Can I keep my subscription if I move to a new address?", "doc": "orion_solar_handbook.pdf", "pages": [6], "keywords": ["transfer form", "keep their subscription"]},
+    {"id": "q08", "question": "What are the phone support hours?", "doc": "orion_solar_handbook.pdf", "pages": [7], "keywords": ["8:00 a.m. to 6:00 p.m."]},
+    {"id": "q09", "question": "How was the solar array funded?", "doc": "orion_solar_handbook.pdf", "pages": [8], "keywords": ["3.2 million"]},
+    {"id": "q10", "question": "How many active members does the program have?", "doc": "orion_solar_handbook.pdf", "pages": [1], "keywords": ["2,350"]},
+    {"id": "q11", "question": "Within how many days must a billing dispute be submitted?", "doc": "orion_solar_handbook.pdf", "pages": [7], "keywords": ["60 days"]},
+    {"id": "q12", "question": "What is the total capacity of the Meadowbrook array?", "doc": "orion_solar_handbook.pdf", "pages": [1], "keywords": ["4.8 megawatts"]},
+    {"id": "q13", "question": "What processing fee applies to credit card payments?", "doc": "orion_solar_handbook.pdf", "pages": [3], "keywords": ["3 percent"]},
+    {"id": "q14", "question": "Who maintains the Meadowbrook array?", "doc": "orion_solar_handbook.pdf", "pages": [5], "keywords": ["Helios"]},
+    {"id": "q15", "question": "Are renters eligible to join the solar program?", "doc": "orion_solar_handbook.pdf", "pages": [1], "keywords": ["Renters are eligible"]},
+    {"id": "q16", "question": "How long was the typical waiting period in 2023?", "doc": "orion_solar_handbook.pdf", "pages": [2], "keywords": ["20 and 45 days"]},
+    {"id": "q17", "question": "How much does a non-resident library card cost?", "doc": "lumen_library_policy.pdf", "pages": [1], "keywords": ["45 dollars"]},
+    {"id": "q18", "question": "How long can I borrow a DVD?", "doc": "lumen_library_policy.pdf", "pages": [2], "keywords": ["one week"]},
+    {"id": "q19", "question": "Does the library charge overdue fines?", "doc": "lumen_library_policy.pdf", "pages": [3], "keywords": ["no longer charges"]},
+    {"id": "q20", "question": "How many holds can I place at one time?", "doc": "lumen_library_policy.pdf", "pages": [4], "keywords": ["10 holds"]},
+    {"id": "q21", "question": "How much does 3D printing cost at the library?", "doc": "lumen_library_policy.pdf", "pages": [5], "keywords": ["10 cents per gram"]},
+    {"id": "q22", "question": "How much does color printing cost per page?", "doc": "lumen_library_policy.pdf", "pages": [6], "keywords": ["50 cents"]},
+    {"id": "q23", "question": "What is the interlibrary loan fee?", "doc": "lumen_library_policy.pdf", "pages": [4], "keywords": ["3 dollars"]},
+    {"id": "q24", "question": "How long are public computer sessions?", "doc": "lumen_library_policy.pdf", "pages": [6], "keywords": ["two-hour"]},
+    {"id": "q25", "question": "How much does a replacement library card cost?", "doc": "lumen_library_policy.pdf", "pages": [1], "keywords": ["2 dollars"]},
+    {"id": "q26", "question": "What is the processing fee for a lost item?", "doc": "lumen_library_policy.pdf", "pages": [3], "keywords": ["5 dollar"]},
+    {"id": "q27", "question": "How many branches does the library operate?", "doc": "lumen_library_policy.pdf", "pages": [1], "keywords": ["four branches"]},
+    {"id": "q28", "question": "How much do meeting rooms cost for for-profit businesses?", "doc": "lumen_library_policy.pdf", "pages": [5], "keywords": ["40 dollars"]},
+    {"id": "q29", "question": "How long is a hold kept at the pickup branch?", "doc": "lumen_library_policy.pdf", "pages": [4], "keywords": ["7 days"]},
+    {"id": "q30", "question": "How many digital items can I borrow per month?", "doc": "lumen_library_policy.pdf", "pages": [6], "keywords": ["15 digital items"]}
+  ],
+  "unanswerable": [
+    {"id": "u01", "question": "What is the capital of France?", "category": "off-topic"},
+    {"id": "u02", "question": "How do I reset my router password?", "category": "off-topic"},
+    {"id": "u03", "question": "Who won the 2022 FIFA World Cup?", "category": "off-topic"},
+    {"id": "u04", "question": "Write a Python function that sorts a list.", "category": "off-topic"},
+    {"id": "u05", "question": "What is the library's policy on bringing pets?", "category": "in-domain"},
+    {"id": "u06", "question": "Who is the CEO of Verdant Power & Light?", "category": "in-domain"},
+    {"id": "u07", "question": "How many solar panels are installed at the Meadowbrook site?", "category": "in-domain"},
+    {"id": "u08", "question": "What is the library's Wi-Fi password?", "category": "in-domain"}
+  ],
+  "followups": [
+    {"id": "f01", "turns": ["What is the community solar credit rate for 2024?", "When are they reconciled each year?"], "doc": "orion_solar_handbook.pdf", "pages": [3, 8], "keywords": ["March"]},
+    {"id": "f02", "turns": ["How long can I borrow a DVD?", "How many of them can I have at once?"], "doc": "lumen_library_policy.pdf", "pages": [2], "keywords": ["10 DVDs"]},
+    {"id": "f03", "turns": ["Is there an enrollment fee?", "What about a transfer fee?"], "doc": "orion_solar_handbook.pdf", "pages": [6], "keywords": ["no transfer fee"]},
+    {"id": "f04", "turns": ["What is the interlibrary loan fee?", "How long does it take to arrive?"], "doc": "lumen_library_policy.pdf", "pages": [4], "keywords": ["one to three weeks"]}
+  ]
+}

@@ -1,0 +1,11 @@
+# Runtime dependencies for the RAG Document Assistant.
+# CPU-only PyTorch wheels keep the install small enough for Streamlit Community Cloud.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch>=2.2,<3
+streamlit>=1.40,<2
+pymupdf>=1.24,<2
+sentence-transformers>=3.0,<7
+faiss-cpu>=1.8,<2
+numpy>=1.26,<3
+requests>=2.31,<3
+python-dotenv>=1.0,<2

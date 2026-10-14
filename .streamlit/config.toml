@@ -1,0 +1,17 @@
+[theme]
+base = "light"
+primaryColor = "#2563EB"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F3F6FB"
+textColor = "#1F2937"
+font = "sans serif"
+
+[server]
+headless = true
+maxUploadSize = 50            # MB per file
+# torch's lazy module loader confuses Streamlit's file watcher; disabling it avoids noisy
+# "Tried to instantiate class '__path__._path'" errors. Re-enable ("auto") if you want hot reload.
+fileWatcherType = "none"
+
+[browser]
+gatherUsageStats = false
